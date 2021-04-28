@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="17701" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="kgR-kP-ITY">
+    <device id="watch44"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="17500"/>
+    </dependencies>
+    <scenes>
+        <!--Goal Met-->
+        <scene sceneID="89e-P3-33K">
+            <objects>
+                <controller identifier="GoalMetController" title="Goal Met" fullBounds="YES" id="7f1-vu-xnI" customClass="GoalMetController" customModule="PokeWalker_WatchKit_Extension">
+                    <items>
+                        <label height="29" alignment="center" text="Congratulations!" id="4TW-YG-Ou5">
+                            <fontDescription key="font" type="system" pointSize="25"/>
+                        </label>
+                        <imageView width="96" height="70" alignment="center" image="0" contentMode="center" id="kS7-QE-lK0"/>
+                        <label height="43" alignment="center" text="You've collected  an egg!" textAlignment="center" numberOfLines="2" id="2Pu-qn-L5G"/>
+                        <label alignment="center" numberOfLines="2" id="FVI-Dr-vIY">
+                            <string key="text">The egg has been
+added to your PC.</string>
+                            <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                        </label>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-356" y="350"/>
+        </scene>
+        <!--Pokémon-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller identifier="PokemonController" title="Pokémon" contentMode="scaleAspectFill" id="AgC-eL-Hgc" customClass="PokemonController" customModule="PokeWalker_WatchKit_Extension">
+                    <items>
+                        <imageView width="96" height="96" alignment="center" image="0" id="4vQ-X9-LLu">
+                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </imageView>
+                        <label alignment="center" text="XXXXXXXXXX" textAlignment="center" id="Q3D-aI-fv1">
+                            <fontDescription key="font" type="system" pointSize="23"/>
+                        </label>
+                        <separator alignment="left" id="kcq-gk-8WA"/>
+                        <label width="1" alignment="left" text="It's gonna hatch soon!" textAlignment="center" numberOfLines="2" id="RiR-em-yT2">
+                            <fontDescription key="font" type="system" pointSize="18"/>
+                        </label>
+                        <label alignment="center" text="LVL XXX" textAlignment="center" id="OfR-db-nOj">
+                            <fontDescription key="font" style="UICTFontTextStyleTitle3"/>
+                        </label>
+                        <group width="1" height="10" alignment="left" id="UER-c1-f0c">
+                            <items>
+                                <imageView width="0.5" height="1" alignment="left" image="236300-1" contentMode="scaleAspectFill" id="Nx8-ej-GHi"/>
+                                <imageView width="0.5" height="1" alignment="left" image="ACACAC-1" contentMode="scaleAspectFill" id="RxX-6I-5g5"/>
+                            </items>
+                        </group>
+                        <label alignment="center" text="XXXXXXX Steps" textAlignment="center" id="7it-Cu-iTU"/>
+                        <separator alignment="center" id="KqS-3e-tOK"/>
+                        <label alignment="left" textAlignment="left" numberOfLines="2" id="bAn-LV-oMz">
+                            <string key="text">Obtained:
+12:36 PM on Feb 28, 2020</string>
+                            <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                        </label>
+                        <label alignment="left" text="Hatched: XX-XX-XXXX XX:XX" numberOfLines="2" id="hv6-6V-Dy0">
+                            <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                        </label>
+                        <separator alignment="left" id="tkB-M6-ty4"/>
+                        <button width="1" height="30" alignment="left" title="Make Partner" id="Grk-PT-ROw">
+                            <connections>
+                                <action selector="makePartner" destination="AgC-eL-Hgc" id="ZH0-aT-lqS"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
+                    <connections>
+                        <outlet property="expGainedFirst" destination="Nx8-ej-GHi" id="FBX-Tg-lPx"/>
+                        <outlet property="expGainedLast" destination="RxX-6I-5g5" id="XrY-pr-sg0"/>
+                        <outlet property="hatchText" destination="RiR-em-yT2" id="apt-DE-dxU"/>
+                        <outlet property="makePartnerButton" destination="Grk-PT-ROw" id="6wG-pY-DbZ"/>
+                        <outlet property="pokemonHatched" destination="hv6-6V-Dy0" id="XES-ow-jPR"/>
+                        <outlet property="pokemonImage" destination="4vQ-X9-LLu" id="MPc-jC-dqs"/>
+                        <outlet property="pokemonLevel" destination="OfR-db-nOj" id="OJd-zG-56Y"/>
+                        <outlet property="pokemonName" destination="Q3D-aI-fv1" id="Yqt-Yv-vwf"/>
+                        <outlet property="pokemonObtained" destination="bAn-LV-oMz" id="S14-72-7VD"/>
+                        <outlet property="pokemonSteps" destination="7it-Cu-iTU" id="Tsj-Bc-7aP"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="101" y="84"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController contentMode="scaleAspectFit" id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Nice stepping! Don't forget to sync your progress in the app!" numberOfLines="4" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Pc-->
+        <scene sceneID="sqC-Lh-exv">
+            <objects>
+                <controller identifier="PcController" title="Pc" id="iU8-h8-uMN" customClass="PcController" customModule="PokeWalker_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="Count:" id="yzk-hw-nMe"/>
+                        <group width="1" height="56" alignment="center" contentMode="scaleAspectFit" id="qUH-qS-kvR">
+                            <items>
+                                <button width="60" alignment="left" backgroundImage="3gi" id="aCt-i8-j0G">
+                                    <connections>
+                                        <action selector="button1Clicked" destination="iU8-h8-uMN" id="J32-p6-ddj"/>
+                                    </connections>
+                                </button>
+                                <button width="60" alignment="left" backgroundImage="12gi" id="VWg-yS-oE1">
+                                    <connections>
+                                        <action selector="button2Clicked" destination="iU8-h8-uMN" id="g7e-r9-YuB"/>
+                                    </connections>
+                                </button>
+                                <button width="60" alignment="left" backgroundImage="11i" id="53H-Eo-WhN">
+                                    <connections>
+                                        <action selector="button3Clicked" destination="iU8-h8-uMN" id="LSw-vB-FA4"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" height="56" alignment="center" id="BgH-JU-Ycg">
+                            <items>
+                                <button width="60" alignment="left" backgroundImage="12gi" id="0VL-1K-pWC">
+                                    <connections>
+                                        <action selector="button4Clicked" destination="iU8-h8-uMN" id="apo-b0-tFB"/>
+                                    </connections>
+                                </button>
+                                <button width="60" alignment="left" backgroundImage="12gi" id="EAj-qd-7eX">
+                                    <connections>
+                                        <action selector="button5Clicked" destination="iU8-h8-uMN" id="bzf-Am-0qp"/>
+                                    </connections>
+                                </button>
+                                <button width="60" alignment="left" backgroundImage="12gi" id="h6T-LV-K08">
+                                    <connections>
+                                        <action selector="button6Clicked" destination="iU8-h8-uMN" id="nqt-Bu-EuC"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" height="56" alignment="center" id="Btf-21-P6I">
+                            <items>
+                                <button width="60" alignment="left" backgroundImage="14gi" id="6Ow-aO-zYT" userLabel="Button7">
+                                    <connections>
+                                        <action selector="button7Clicked" destination="iU8-h8-uMN" id="MAX-La-aSI"/>
+                                    </connections>
+                                </button>
+                                <button width="60" alignment="left" backgroundImage="14gi" id="EL5-fV-Gjl" userLabel="Button8">
+                                    <connections>
+                                        <action selector="button8Clicked" destination="iU8-h8-uMN" id="yKm-AX-Z3b"/>
+                                    </connections>
+                                </button>
+                                <button width="60" alignment="left" backgroundImage="14gi" id="txm-bv-T4B" userLabel="Button9">
+                                    <connections>
+                                        <action selector="button9Clicked" destination="iU8-h8-uMN" id="hbb-yo-Uiu"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" height="56" alignment="center" id="cAK-vh-qdi">
+                            <items>
+                                <button width="60" alignment="left" backgroundImage="14gi" id="6zR-Pt-4xU" userLabel="Button10">
+                                    <connections>
+                                        <action selector="button10Clicked" destination="iU8-h8-uMN" id="l2d-hz-X7Y"/>
+                                    </connections>
+                                </button>
+                                <button width="60" alignment="left" backgroundImage="14gi" id="waj-bO-6NO" userLabel="Button11">
+                                    <connections>
+                                        <action selector="button11Clicked" destination="iU8-h8-uMN" id="a62-t2-Pqi"/>
+                                    </connections>
+                                </button>
+                                <button width="60" alignment="left" backgroundImage="14gi" id="QAM-Na-rIt" userLabel="Button12">
+                                    <connections>
+                                        <action selector="button12Clicked" destination="iU8-h8-uMN" id="v50-Cc-bbZ"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" height="56" alignment="center" id="v86-ud-m2p">
+                            <items>
+                                <button width="60" alignment="left" backgroundImage="14gi" id="Vs3-Ph-01j" userLabel="Button13">
+                                    <connections>
+                                        <action selector="button13Clicked" destination="iU8-h8-uMN" id="knY-tZ-DEo"/>
+                                    </connections>
+                                </button>
+                                <button width="60" alignment="left" backgroundImage="14gi" id="9Kf-Q9-ebf" userLabel="Button14">
+                                    <connections>
+                                        <action selector="button14Clicked" destination="iU8-h8-uMN" id="ZGe-V2-Mb8"/>
+                                    </connections>
+                                </button>
+                                <button width="60" alignment="left" backgroundImage="14gi" id="gh3-dI-dkP" userLabel="Button15">
+                                    <connections>
+                                        <action selector="button15Clicked" destination="iU8-h8-uMN" id="K5N-lm-X0d"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" height="56" alignment="center" id="Xt5-gW-FeY">
+                            <items>
+                                <button width="60" alignment="left" backgroundImage="14gi" id="Fdd-2N-NRD" userLabel="Button16">
+                                    <connections>
+                                        <action selector="button16Clicked" destination="iU8-h8-uMN" id="E4i-d8-NyA"/>
+                                    </connections>
+                                </button>
+                                <button width="60" alignment="left" backgroundImage="14gi" id="QbV-13-y5w" userLabel="Button17">
+                                    <connections>
+                                        <action selector="button17Clicked" destination="iU8-h8-uMN" id="Sgg-0h-9Yn"/>
+                                    </connections>
+                                </button>
+                                <button width="60" alignment="left" backgroundImage="14gi" id="4T7-xQ-YLv" userLabel="Button18">
+                                    <connections>
+                                        <action selector="button18Clicked" destination="iU8-h8-uMN" id="cSq-vP-fG6"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" height="56" alignment="center" id="8gv-2q-Ljy">
+                            <items>
+                                <button width="60" alignment="left" backgroundImage="14gi" id="tls-Fk-5ld" userLabel="Button19">
+                                    <connections>
+                                        <action selector="button19Clicked" destination="iU8-h8-uMN" id="kgp-Zc-Wxp"/>
+                                    </connections>
+                                </button>
+                                <button width="60" alignment="left" backgroundImage="14gi" id="6HQ-HF-oHI" userLabel="Button20">
+                                    <connections>
+                                        <action selector="button20Clicked" destination="iU8-h8-uMN" id="2gN-hY-orC"/>
+                                    </connections>
+                                </button>
+                                <button width="60" alignment="left" backgroundImage="14gi" id="b0t-mf-GBW" userLabel="Button21">
+                                    <connections>
+                                        <action selector="button21Clicked" destination="iU8-h8-uMN" id="KdT-nL-kpk"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" height="56" alignment="center" id="5fx-Lm-b9b">
+                            <items>
+                                <button width="60" alignment="left" backgroundImage="14gi" id="pQF-5E-enD" userLabel="Button22">
+                                    <connections>
+                                        <action selector="button22Clicked" destination="iU8-h8-uMN" id="37c-BO-x6H"/>
+                                    </connections>
+                                </button>
+                                <button width="60" alignment="left" backgroundImage="14gi" id="xrh-qc-h3e" userLabel="Button23">
+                                    <connections>
+                                        <action selector="button23Clicked" destination="iU8-h8-uMN" id="wOC-7M-XDw"/>
+                                    </connections>
+                                </button>
+                                <button width="60" alignment="left" backgroundImage="14gi" id="UeI-Oi-khq" userLabel="Button24">
+                                    <connections>
+                                        <action selector="button24Clicked" destination="iU8-h8-uMN" id="Iww-WQ-rNb"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" height="56" alignment="center" id="z2d-fo-D5m">
+                            <items>
+                                <button width="60" alignment="left" backgroundImage="14gi" id="gsl-cb-97H" userLabel="Button25">
+                                    <connections>
+                                        <action selector="button25Clicked" destination="iU8-h8-uMN" id="oQN-I9-CO2"/>
+                                    </connections>
+                                </button>
+                                <button width="60" alignment="left" backgroundImage="14gi" id="QJH-Nw-n5W" userLabel="Button26">
+                                    <connections>
+                                        <action selector="button26Clicked" destination="iU8-h8-uMN" id="wbA-Fv-0tK"/>
+                                    </connections>
+                                </button>
+                                <button width="60" alignment="left" backgroundImage="14gi" id="cFw-pH-zGS" userLabel="Button27">
+                                    <connections>
+                                        <action selector="button27Clicked" destination="iU8-h8-uMN" id="if4-mF-HSC"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" height="56" alignment="center" id="piD-Mx-dof">
+                            <items>
+                                <button width="60" alignment="left" backgroundImage="14gi" id="0MK-IB-Iw4" userLabel="Button28">
+                                    <connections>
+                                        <action selector="button28Clicked" destination="iU8-h8-uMN" id="EEV-zz-AE1"/>
+                                    </connections>
+                                </button>
+                                <button width="60" alignment="left" backgroundImage="14gi" id="DS5-VT-wvO" userLabel="Button29">
+                                    <connections>
+                                        <action selector="button29Clicked" destination="iU8-h8-uMN" id="sj2-Pu-4L8"/>
+                                    </connections>
+                                </button>
+                                <button width="60" alignment="left" backgroundImage="14gi" id="vGV-jJ-Mfi" userLabel="Button30">
+                                    <connections>
+                                        <action selector="button30Clicked" destination="iU8-h8-uMN" id="Mho-Uq-Rcd"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="button1" destination="aCt-i8-j0G" id="rLv-gg-trQ"/>
+                        <outlet property="button10" destination="6zR-Pt-4xU" id="bsJ-vU-5g1"/>
+                        <outlet property="button11" destination="waj-bO-6NO" id="Hua-GX-19F"/>
+                        <outlet property="button12" destination="QAM-Na-rIt" id="Ufh-9b-JiD"/>
+                        <outlet property="button13" destination="Vs3-Ph-01j" id="xYT-i8-9cE"/>
+                        <outlet property="button14" destination="9Kf-Q9-ebf" id="i78-YC-mXu"/>
+                        <outlet property="button15" destination="gh3-dI-dkP" id="nCE-VZ-cPz"/>
+                        <outlet property="button16" destination="Fdd-2N-NRD" id="UKu-Go-n1p"/>
+                        <outlet property="button17" destination="QbV-13-y5w" id="crV-0u-1V9"/>
+                        <outlet property="button18" destination="4T7-xQ-YLv" id="ci7-As-SSM"/>
+                        <outlet property="button19" destination="tls-Fk-5ld" id="r5b-T1-3Jo"/>
+                        <outlet property="button2" destination="VWg-yS-oE1" id="Ci5-d8-kpB"/>
+                        <outlet property="button20" destination="6HQ-HF-oHI" id="I5N-P3-RZ1"/>
+                        <outlet property="button21" destination="b0t-mf-GBW" id="HNv-yD-ZV0"/>
+                        <outlet property="button22" destination="pQF-5E-enD" id="DQ9-3i-5z9"/>
+                        <outlet property="button23" destination="xrh-qc-h3e" id="fBu-uB-ehG"/>
+                        <outlet property="button24" destination="UeI-Oi-khq" id="tZM-zg-azN"/>
+                        <outlet property="button25" destination="gsl-cb-97H" id="Svc-fe-WFG"/>
+                        <outlet property="button26" destination="QJH-Nw-n5W" id="rkl-KW-FlH"/>
+                        <outlet property="button27" destination="cFw-pH-zGS" id="rUG-x7-v2k"/>
+                        <outlet property="button28" destination="0MK-IB-Iw4" id="NnO-Ao-ROR"/>
+                        <outlet property="button29" destination="DS5-VT-wvO" id="HBr-Kl-rrT"/>
+                        <outlet property="button3" destination="53H-Eo-WhN" id="Sbe-zn-wLl"/>
+                        <outlet property="button30" destination="vGV-jJ-Mfi" id="k7d-j8-ya8"/>
+                        <outlet property="button4" destination="0VL-1K-pWC" id="FDc-zU-4VX"/>
+                        <outlet property="button5" destination="EAj-qd-7eX" id="CiK-uD-nAS"/>
+                        <outlet property="button6" destination="h6T-LV-K08" id="h8Y-QX-h3i"/>
+                        <outlet property="button7" destination="6Ow-aO-zYT" id="JZH-jp-K2O"/>
+                        <outlet property="button8" destination="EL5-fV-Gjl" id="CLj-AN-jVQ"/>
+                        <outlet property="button9" destination="txm-bv-T4B" id="PLH-4W-XvD"/>
+                        <outlet property="count" destination="yzk-hw-nMe" id="W3d-HM-18C"/>
+                        <segue destination="xmf-6Y-mDh" kind="relationship" relationship="nextPage" id="EXE-m9-WAZ"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-129" y="183"/>
+        </scene>
+        <!--Sync-->
+        <scene sceneID="tO6-Fg-r5X">
+            <objects>
+                <controller identifier="SyncController" title="Sync" id="xmf-6Y-mDh" customClass="SyncController" customModule="PokeWalker_WatchKit_Extension">
+                    <items>
+                        <group width="1" height="56" alignment="left" id="IyZ-wu-Css">
+                            <items>
+                                <imageView width="60" alignment="left" image="0i" id="IrF-cb-rrV"/>
+                                <label width="1" height="1" alignment="left" text="Egg" id="OMh-TZ-yY0"/>
+                            </items>
+                        </group>
+                        <button width="1" height="30" alignment="left" hidden="YES" title="Sync" id="a4c-3i-CAG">
+                            <connections>
+                                <action selector="Sync" destination="xmf-6Y-mDh" id="N4x-LB-WTn"/>
+                            </connections>
+                        </button>
+                        <label alignment="left" text="Last Sync: Never" numberOfLines="2" id="khT-wu-Lie">
+                            <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                        </label>
+                        <separator alignment="left" id="Csf-2d-7a2"/>
+                        <label alignment="left" text="Daily Goal" id="T7m-sN-p3C"/>
+                        <group width="1" height="10" alignment="left" id="6ML-rR-WS6">
+                            <items>
+                                <imageView width="0.0" height="1" alignment="left" image="236300-1" contentMode="scaleAspectFill" id="R3t-Tm-NoO"/>
+                                <imageView width="1" height="1" alignment="left" image="ACACAC-1" contentMode="scaleAspectFill" id="IV8-Ys-gIy"/>
+                            </items>
+                        </group>
+                        <button width="1" height="30" alignment="left" hidden="YES" title="Get Pokemon" id="BiY-xE-qcW">
+                            <connections>
+                                <action selector="Sync" destination="xmf-6Y-mDh" id="WZX-61-g9c"/>
+                                <segue destination="7f1-vu-xnI" kind="push" id="Qdi-Y6-Pv5"/>
+                            </connections>
+                        </button>
+                        <label alignment="left" hidden="YES" text="Wow! You've collected all the eggs! Amazing work!" textAlignment="center" numberOfLines="2" id="5xm-Jh-grE">
+                            <fontDescription key="font" type="system" pointSize="13"/>
+                        </label>
+                    </items>
+                    <connections>
+                        <outlet property="GetPokemon" destination="BiY-xE-qcW" id="U1f-rb-7lf"/>
+                        <outlet property="congratsMessage" destination="5xm-Jh-grE" id="Zla-6L-Uob"/>
+                        <outlet property="dailyGoalFirst" destination="R3t-Tm-NoO" id="0ig-0V-k8m"/>
+                        <outlet property="dailyGoalLabel" destination="T7m-sN-p3C" id="08P-0v-SJt"/>
+                        <outlet property="dailyGoalLast" destination="IV8-Ys-gIy" id="xMI-uc-rZC"/>
+                        <outlet property="lastSync" destination="khT-wu-Lie" id="MLX-qw-dsm"/>
+                        <outlet property="partnerImage" destination="IrF-cb-rrV" id="bNT-02-c15"/>
+                        <outlet property="partnerName" destination="OMh-TZ-yY0" id="cEK-Zb-f2H"/>
+                        <outlet property="syncButton" destination="a4c-3i-CAG" id="SZr-wW-h7E"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="299" y="30"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="TFA-9B-UKg">
+            <objects>
+                <controller identifier="HomeController" title="Home" fullBounds="YES" id="kgR-kP-ITY" customClass="HomeController" customModule="PokeWalker_WatchKit_Extension">
+                    <items>
+                        <label alignment="center" text="Select your character:" textAlignment="center" id="0Rv-Fk-QZ8"/>
+                        <group width="1" alignment="left" id="x1R-v6-Ctv">
+                            <items>
+                                <button width="85" height="70" alignment="center" backgroundImage="Adrian" id="XUG-fq-brd">
+                                    <connections>
+                                        <action selector="AdrianPressed" destination="kgR-kP-ITY" id="IVw-ji-dGA"/>
+                                    </connections>
+                                </button>
+                                <button width="85" height="70" alignment="center" backgroundImage="Rynier" id="dyi-xE-5cl">
+                                    <connections>
+                                        <action selector="RynierPressed" destination="kgR-kP-ITY" id="UXD-t0-4yJ"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="rup-Wo-8XP">
+                            <items>
+                                <button width="85" height="70" alignment="center" backgroundImage="Elisa" id="G31-Eh-kfW">
+                                    <connections>
+                                        <action selector="ElisaPressed" destination="kgR-kP-ITY" id="fva-B5-NJo"/>
+                                    </connections>
+                                </button>
+                                <button width="85" height="70" alignment="center" backgroundImage="Nate" id="Eq9-re-Afq">
+                                    <connections>
+                                        <action selector="NatePressed" destination="kgR-kP-ITY" id="5HV-Q8-hqk"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="nLC-2H-GAh">
+                            <items>
+                                <group width="84" alignment="left" layout="vertical" id="vPQ-ga-t2X">
+                                    <items>
+                                        <imageView width="85" height="70" alignment="center" image="Adrian" contentMode="center" id="RLK-Y9-mD0"/>
+                                        <label alignment="center" text="Adrian" textAlignment="center" id="UMj-jT-uGX">
+                                            <fontDescription key="font" style="UICTFontTextStyleTitle2"/>
+                                        </label>
+                                    </items>
+                                </group>
+                                <button width="96" height="96" alignment="left" backgroundImage="0" id="5bw-BO-UYb">
+                                    <connections>
+                                        <action selector="Partner" destination="kgR-kP-ITY" id="3xs-Ag-sxy"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <label width="175" height="33" alignment="center" text="XXXXXXX Walker" textAlignment="center" id="fuS-zt-pET">
+                            <fontDescription key="font" style="UICTFontTextStyleTitle3"/>
+                        </label>
+                        <group width="1" alignment="left" id="6Zm-ex-Src">
+                            <items>
+                                <imageView width="32" height="31" alignment="center" image="ribbon 1" contentMode="scaleAspectFit" id="324-b4-ra7" userLabel="100000 steps"/>
+                                <imageView width="32" height="31" alignment="center" image="ribbon 2" contentMode="scaleAspectFit" id="aeh-B5-ade" userLabel="1000000 Steps"/>
+                                <imageView width="32" height="31" alignment="center" image="ribbon 5" contentMode="scaleAspectFit" id="Uhq-7Z-1Ru" userLabel="20 Eggs Received"/>
+                                <imageView width="32" height="31" alignment="center" image="ribbon 6" contentMode="scaleAspectFit" id="lO8-ah-usi"/>
+                                <imageView width="32" height="31" alignment="center" image="ribbon 4" contentMode="scaleAspectFit" id="RYZ-ki-GV4" userLabel="All Gmax"/>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="Adrian" destination="XUG-fq-brd" id="yTm-9Y-Wzl"/>
+                        <outlet property="AllEggsReceived" destination="lO8-ah-usi" id="1e9-NI-8hl"/>
+                        <outlet property="Elisa" destination="G31-Eh-kfW" id="WLn-Ni-tf8"/>
+                        <outlet property="Nate" destination="Eq9-re-Afq" id="DzZ-fQ-f3p"/>
+                        <outlet property="Rynier" destination="dyi-xE-5cl" id="x9p-st-rjo"/>
+                        <outlet property="allGmaxed" destination="RYZ-ki-GV4" id="5fX-fK-Ofw"/>
+                        <outlet property="hundredThousandSteps" destination="324-b4-ra7" id="VCJ-dR-5UI"/>
+                        <outlet property="millionSteps" destination="aeh-B5-ade" id="ijw-R2-M4C"/>
+                        <outlet property="partnerImage" destination="5bw-BO-UYb" id="nnC-Ng-qvf"/>
+                        <outlet property="playerImage" destination="RLK-Y9-mD0" id="wfl-eO-JCe"/>
+                        <outlet property="playerName" destination="UMj-jT-uGX" id="6KU-e4-7Ev"/>
+                        <outlet property="selectCharacter" destination="0Rv-Fk-QZ8" id="1n0-iO-T8n"/>
+                        <outlet property="twentyEggs" destination="Uhq-7Z-1Ru" id="qxx-mB-OeY"/>
+                        <outlet property="walkerTitle" destination="fuS-zt-pET" id="8o0-Yd-BNL"/>
+                        <segue destination="iU8-h8-uMN" kind="relationship" relationship="nextPage" id="m6j-Ib-8Hd"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-356" y="31"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="0" width="96" height="96"/>
+        <image name="0i" width="60" height="56"/>
+        <image name="11i" width="60" height="56"/>
+        <image name="12gi" width="60" height="56"/>
+        <image name="14gi" width="60" height="56"/>
+        <image name="236300-1" width="1" height="1"/>
+        <image name="3gi" width="60" height="56"/>
+        <image name="ACACAC-1" width="1" height="1"/>
+        <image name="Adrian" width="85" height="70"/>
+        <image name="Elisa" width="85" height="70"/>
+        <image name="Nate" width="85" height="63"/>
+        <image name="Rynier" width="85" height="70"/>
+        <image name="ribbon 1" width="32" height="31"/>
+        <image name="ribbon 2" width="32" height="31"/>
+        <image name="ribbon 4" width="32" height="31"/>
+        <image name="ribbon 5" width="32" height="31"/>
+        <image name="ribbon 6" width="32" height="31"/>
+    </resources>
+</document>
